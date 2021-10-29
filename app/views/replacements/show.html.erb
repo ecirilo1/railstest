@@ -1,0 +1,18 @@
+<%= simple_form_for(@replacement) do |f| %>
+  <%= f.input :contact_last_name, as: :string %>
+  <%= f.input :contact_first_name, as: :string %>
+  <%= f.input :contact_client, as: :string %>
+  <%= f.input :contact_email, as: :string%>
+  <%= f.input :description, as: :string %>
+  <%= f.input :return_content, as: :string %>
+  <%= f.input :tablet_number, as: :string %>
+  <%= f.input :internal_message, as: :string %>
+  <%= f.input :received_date, as: :string %>
+  <%= f.input :received_tracking, as: :string %>
+  <%= f.input :tested, as: :boolean %>
+  <%= f.input :replacement_number, as: :string %>
+  <%= f.input :to_bill, as: :boolean %>
+  <%= f.input :owner_id, as: :string %>
+  <%= f.input :contact_phone, as: :string %>
+  <%= f.button :submit, 'Modifier', class: "btn btn-info rounded-lg mb-5" %>
+<% end %>

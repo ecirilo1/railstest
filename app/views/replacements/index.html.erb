@@ -1,0 +1,68 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Return id</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Contact client</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Description</th>
+      <th scope="col">To bill</th>
+      <th scope="col">Return content</th>
+      <th scope="col">Tablet number</th>
+      <th scope="col">Received date</th>
+      <th scope="col">Internal message</th>
+      <th scope="col">Received tracking</th>
+      <th scope="col">Tested ?</th>
+      <th scope="col">Owner id</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @replacements.each do |replacement| %>
+    <% # raise %>
+      <tr>
+        <th scope="row"><%= replacement.id %></th>
+        <td><%=replacement.customer_id %></td>
+        <td><%=replacement.contact_last_name %></td>
+        <td><%=replacement.contact_client %></td>
+        <td><%=replacement.contact_email %></td>
+        <td><%=replacement.contact_phone %></td>
+        <td><%=replacement.description %></td>
+        <td><%=replacement.to_bill %></td>
+        <td><%=replacement.return_content %></td>
+        <td><%=replacement.tablet_number %></td>
+        <td><%=replacement.internal_message %></td>
+        <td><%=replacement.received_date %></td>
+        <td><%=replacement.received_tracking %></td>
+        <td><%=replacement.tested %></td>
+        <td><%=replacement.replacement_number %></td>
+        <td><%=replacement.owner_id %></td>
+        <td>
+          <%= link_to replacement, { :method => :delete, :class => 'btn btn-sm btn-icon btn-bg-light btn-active-color-danger', data: {confirm: 'Are you sure you want to remove this replacement?'}} do %>
+            <span class="svg-icon svg-icon-2">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect x="0" y="0" width="24" height="24"></rect>
+                  <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>
+                  <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>
+                </g>
+              </svg>
+            </span>
+          <% end %>
+          <%= link_to replacement, { method: :get, :class => 'bi bi-pen' } do %>
+            <span class="bi bi-pen">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <rect x="0" y="0" width="24" height="24"></rect>
+                  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" fill="#000000" opacity="0.3"></path>
+                </g>
+              </svg>
+            </span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
